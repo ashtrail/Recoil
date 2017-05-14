@@ -1,0 +1,11 @@
+| Code:
+|
+| -try endless recoil
+| -add shot cooldown
+| -adjust hitboxes
+| -add controller support
+
+| Other:
+|
+| -change/adjust sounds
+| -add graphism
