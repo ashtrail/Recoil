@@ -15,23 +15,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxSort;
 import Global.Obstacle as Obstacle;
 
-/*@:enum
-abstract HttpStatus(Int)
-{
-  var NotFound = 404;
-  var MethodNotAllowed = 405;
-}
-*/
-// @:enum
-// abstract Obstacle(Int)
-// {
-// 	var NONE = 0;
-// 	var TOP = 1;
-// 	var MIDDLE = 2;
-// 	var BOTTOM = 3;
-// 	var MOVING = 4;
-// }
-
 class PlayState extends FlxState
 {
 	public static var scrollSpeed = 350;
@@ -121,8 +104,8 @@ class PlayState extends FlxState
 		_generationTimer = new FlxTimer();
 		_generationTimer.start(2.5, generateObstacle, 0);
 
-/*		FlxG.sound.playMusic(AssetPaths.Black_Vortex__mp3);
-*/
+		// FlxG.sound.playMusic(AssetPaths.Black_Vortex__mp3);
+
 		super.create();
 	}
 

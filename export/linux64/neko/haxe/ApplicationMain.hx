@@ -26,7 +26,7 @@ class ApplicationMain {
 	
 	public static function main () {
 		
-		flash.Lib.setPackage ("HaxeFlixel", "SpaceVolumeTechnician", "com.example.myapp", "0.0.1");
+		flash.Lib.setPackage ("HaxeFlixel", "Recoil", "com.example.myapp", "0.0.1");
 		
 		
 		#if ios
@@ -40,7 +40,7 @@ class ApplicationMain {
 		telemetryConfig = new hxtelemetry.HxTelemetry.Config ();
 		telemetryConfig.allocations = true;
 		telemetryConfig.host = "localhost";
-		telemetryConfig.app_name = "SpaceVolumeTechnician";
+		telemetryConfig.app_name = "Recoil";
 		#end
 		
 		
@@ -141,7 +141,7 @@ class ApplicationMain {
 			(false ? flash.Lib.FULLSCREEN : 0) |
 			(0 == 4 ? flash.Lib.HW_AA_HIRES : 0) |
 			(0 == 2 ? flash.Lib.HW_AA : 0),
-			"SpaceVolumeTechnician",
+			"Recoil",
 			null
 			#if mobile, ScaledStage #end
 		);
@@ -318,14 +318,14 @@ class ApplicationMain {
 	public static function main () {
 		
 		#if openfl
-		flash.Lib.setPackage ("HaxeFlixel", "SpaceVolumeTechnician", "com.example.myapp", "0.0.1");
+		flash.Lib.setPackage ("HaxeFlixel", "Recoil", "com.example.myapp", "0.0.1");
 		
 		#end
 		
 		wx.App.boot (function () {
 			
 			
-			frame = wx.Frame.create (null, null, "SpaceVolumeTechnician", null, { width: 1332, height: 700 });
+			frame = wx.Frame.create (null, null, "Recoil", null, { width: 1332, height: 700 });
 			
 			
 			#if openfl
@@ -515,11 +515,11 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "305",
+			build: "309",
 			company: "HaxeFlixel",
-			file: "SpaceVolumeTechnician",
+			file: "Recoil",
 			fps: 60,
-			name: "SpaceVolumeTechnician",
+			name: "Recoil",
 			orientation: "landscape",
 			packageName: "com.example.myapp",
 			version: "0.0.1",
@@ -537,7 +537,7 @@ class ApplicationMain {
 					parameters: "{}",
 					resizable: false,
 					stencilBuffer: false,
-					title: "SpaceVolumeTechnician",
+					title: "Recoil",
 					vsync: true,
 					width: 1332,
 					x: null,

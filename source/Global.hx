@@ -14,7 +14,8 @@ class Obstacle
 
 class Global
 {
-	public static var scores:ScoreList = new ScoreList(5);
-	public static var save:FlxSave = new FlxSave();
 	public static var Obstacle:Obstacle;
+
+	public static var scores:ScoreList 	= new ScoreList(5);
+	public static var save:FlxSave 		= new FlxSave();
 }

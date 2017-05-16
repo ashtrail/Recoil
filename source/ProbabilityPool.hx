@@ -35,14 +35,17 @@ class ProbabilityPool
 
 	public function resolve():Int
 	{
-		var res = FlxG.random.float(0, 100);
+		var roll = FlxG.random.float(0, 100);
+		var result = 0;
 
 		for (i in 0..._list.length)
 		{
-			if (res <= _list[i].realValue)
-				return (_list[i].idx);
+			if (roll <= _list[i].realValue)
+			{
+				result = _list[i].idx;
+				break;
+			}
 		}
-		return (-1);
+		return (result);
 	}
-
 }
