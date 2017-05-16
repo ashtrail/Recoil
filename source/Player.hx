@@ -6,19 +6,26 @@ import flixel.FlxG;
 import flixel.util.FlxColor;
 import flixel.math.FlxPoint;
 import flixel.math.FlxAngle;
+import flixel.util.FlxTimer;
 import Math;
 
 class Player extends FlxSprite
 {
-	public var speed:Float = 350;
+	public var 	speed:Float = 350;
 
-	public var shotAngle:Float = 0;
+	public var 	shotAngle:Float = 0;
+	public var 	reloading = false;
+	// private var _reloadTimer:FlxTimer;
+	private var _shotTimer:FlxTimer;
+
 
 	public function new(?X:Float=0, ?Y:Float=0)
 	{
 		super(X, Y);
 	 	makeGraphic(60, 80, FlxColor.WHITE);
 	 	drag.x = drag.y = 400;
+	 	// _reloadTimer = new FlxTimer();
+	 	_shotTimer = new FlxTimer();
 	}
 
 	override public function update(elapsed:Float):Void
@@ -44,7 +51,7 @@ class Player extends FlxSprite
 
 	public function shooting():Void
 	{
-		if (FlxG.mouse.justReleased)
+		if (FlxG.mouse.justReleased && !reloading)
 		{
 			var pos = getGraphicMidpoint();
 			var mousePos = FlxG.mouse.getScreenPosition();
@@ -61,7 +68,22 @@ class Player extends FlxSprite
 			velocity.set(speed, 0);
 			velocity.rotate(FlxPoint.weak(0, 0), oppositeAngle(shotAngle));
 
+			reloading = true;
+
 			FlxG.sound.play(AssetPaths.shot__wav);
+			// wait until the end of the sound
+			_shotTimer.start(0.3, finishReload, 1);
 		}
+	}
+
+	// private function reload(Timer:FlxTimer):Void
+	// {
+	// 	FlxG.sound.play(AssetPaths.reload__wav);
+	// 	_reloadTimer.start(0.2, finishReload, 1);
+	// }
+
+	private function finishReload(Timer:FlxTimer):Void
+	{
+		reloading = false;
 	}
 }
